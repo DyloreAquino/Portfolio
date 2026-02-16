@@ -26,20 +26,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
+        style={{ background: "var(--background)", color: "var(--foreground)" }}
       >
-        <header className="flex p-5 pl-10 justify-between font-bold text-2xl font-mono bg-gray-900">
-          <NavLink href="/">this is jerold</NavLink>
-          <div className="flex gap-10 text-xl pr-10">
+        <header className="flex fixed p-5 pl-10 justify-between text-2xl font-bold font-mono bg-[#1e453e] top-0 w-full shadow-[0_10px_20px_rgba(0,0,0,0.5)] z-50">
+          <NavLink href="/">this is je.</NavLink>
+          <div className="flex gap-10 text-lg pr-10 pl-10 font-light">
             <NavLink href="/gamedev">gameDev</NavLink>
             <NavLink href="/softwaredev">softwareDev</NavLink>
             <NavLink href="/leadership">leadership</NavLink>
             <NavLink href="/creatives">creatives</NavLink>
             <NavLink href="/info">info</NavLink>
           </div>
-          
         </header>
-        {children}
+        <main className="m-35">
+          {children}
+        </main>
       </body>
     </html>
   );
