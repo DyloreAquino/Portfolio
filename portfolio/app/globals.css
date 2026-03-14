@@ -20,13 +20,12 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(to right, #000000, #0b0c0b); 
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
-  background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

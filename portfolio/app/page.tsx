@@ -1,21 +1,52 @@
-import Image from "next/image";
+"use client";
 import Header from "@/components/Header";
 import Card from "@/components/Card";
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Html, useProgress } from '@react-three/drei'
+import Model from "@/components/Model";
+import { Environment } from "@react-three/drei";
+
+// To load the models faster. from https://medium.com/@arslaniqbalmgt/3d-website-in-next-js-13-with-loader-848bf898caa 
+function Loader() {
+  const { progress } = useProgress()
+  return <Html center>{progress.toFixed()}%</Html>
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen gap-2 w-full items-center">
-      <Header className="hover:scale-105 hover:text-green-200 transition-all duration-200 cursor-pointer">
-        <a href="/info">
-        je / dylore / jerold.
-        </a>
-      </Header>
-      <p className="font-mono font-light">
-        Software Engineer / Game Developer / Music Producer / Artist / Storyteller.
-      </p>
-      <p className="font-mono font-light">
-        Currently studying BS Computer Science - Digital Game Design and Development in Ateneo de Manila University.
-      </p>
+    <div className="flex flex-col gap-2 w-full items-center">
+      <div className="flex flex-row gap-2 w-full items-center">
+
+        {/*Right Model Section*/}
+          <div style={{height:"300px", width: "400px"}}>
+            <Canvas camera={{ position: [0, 0, 3.5], fov: 50 }}>
+              <Environment preset="forest"/>
+              <Suspense fallback={<Loader />}>
+                <Model model_filename={"tincan.glb"}/>
+              </Suspense>
+            </Canvas>
+          </div>
+
+        {/*Right Text Section*/}
+        <div className="flex flex-col gap-2 w-full items-center text-center">
+          <Header className="hover:scale-105 hover:text-green-200 transition-all duration-100 cursor-pointer">
+            <a href="/info">
+            je / dylore / jerold.
+            </a>
+          </Header>
+
+          <p className="font-mono font-light">
+            Software Engineer / Game Developer / Music Producer / Artist / Storyteller.
+          </p>
+
+          <p className="font-mono font-light">
+            Currently studying BS Computer Science - Digital Game Design and Development in Ateneo de Manila University.
+          </p>
+        </div>
+      </div>
+
+      {/* Cards Section */}
       <div className="flex flex-wrap justify-center gap-8 pt-16 w-full">
         <Card
           title="gameDev"

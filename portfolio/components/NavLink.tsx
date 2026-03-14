@@ -9,7 +9,7 @@ export default function NavLink({ href, children }: NavLinkProps) {
   return (
     <Link
       href={href}
-      className="hover:text-gray-500 transition-colors duration-200"
+      className="hover:text-gray-500 transition-colors duration-100"
     >
       {children}
     </Link>

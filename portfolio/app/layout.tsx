@@ -27,7 +27,6 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
-        style={{ background: "var(--background)", color: "var(--foreground)" }}
       >
         <header className="flex fixed p-5 pl-10 justify-between text-2xl font-bold font-mono bg-[#1e453e] top-0 w-full shadow-[0_10px_20px_rgba(0,0,0,0.5)] z-50">
           <NavLink href="/">this is je.</NavLink>
@@ -42,6 +41,9 @@ export default function RootLayout({
         <main className="m-35">
           {children}
         </main>
+        <footer className="w-full text-center py-4 font-mono font-light text-sm text-gray-400 mt-auto">
+          © 2026 je / dylore / jerold.
+        </footer>
       </body>
     </html>
   );
