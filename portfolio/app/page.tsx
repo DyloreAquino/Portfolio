@@ -52,13 +52,13 @@ export default function Home() {
           title="gameDev"
           description="A showcase of my experience in video game systems development."
           gifSrc="/test1.gif"
-          href="/gameDev">
+          href="/gamedev">
         </Card>
         <Card
           title="softwareDev"
           description="Programs and software to improve quality of life and efficiency."
           gifSrc="/test2.gif"
-          href="/softwareDev">
+          href="/softwaredev">
         </Card>
         <Card
           title="leadership"
