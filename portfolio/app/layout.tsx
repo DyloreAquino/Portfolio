@@ -18,6 +18,26 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "This is je.",
   description: "Jerold Aquino's portfolio. made in Next.js.",
+  openGraph: {
+    title: "This is je.",
+    description: "Jerold Aquino's portfolio. Software engineer, game developer, musician, artist.",
+    url: "https://thisisje.vercel.app",
+    type: "website",
+    images: [
+      {
+        url: "https://thisisje.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "This is je. - Je's Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "This is je.",
+    description: "Jerold Aquino's portfolio",
+    images: ["https://thisisje.vercel.app/og-image.png"],
+  },
 };
 
 export default function RootLayout({
