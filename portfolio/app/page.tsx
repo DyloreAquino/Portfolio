@@ -51,25 +51,25 @@ export default function Home() {
         <Card
           title="gameDev"
           description="A showcase of my experience in video game systems development."
-          gifSrc="/test1.gif"
+          gifSrc="/gameDev.gif"
           href="/gamedev">
         </Card>
         <Card
           title="softwareDev"
           description="Programs and software to improve quality of life and efficiency."
-          gifSrc="/test2.gif"
+          gifSrc="/softwareDev.gif"
           href="/softwaredev">
         </Card>
         <Card
           title="leadership"
           description="Stories and projects that tell of my leadership expertise."
-          gifSrc="/test3.webp"
+          gifSrc="/leadership.gif"
           href="/leadership">
         </Card>
         <Card
           title="creatives"
           description="My art in different forms: music, drawing, 3D modelling."
-          gifSrc="/test4.gif"
+          gifSrc="/creatives.gif"
           href="/creatives">
         </Card>
       </div>
