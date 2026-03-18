@@ -29,7 +29,7 @@ export default function LeadershipSection() {
         title="Financial Transparency & Reporting"
         subtitle="Organizational Accountability"
         description="Delivered comprehensive financial statements to the organization, providing clear insight into income, expenses, and reserves. Prioritized transparency to build member confidence and demonstrate responsible stewardship of organizational resources."
-        imageSrc="/acgc2.jpg"
+        imageSrc="/acgcexecom.jpg"
         imageAlt="Executive Committee of the ACGC"
       />
 
