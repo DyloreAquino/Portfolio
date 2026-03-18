@@ -12,8 +12,8 @@ interface CardProps {
 export default function Card({ title, description, gifSrc, href, className }: CardProps) {
   return (
     <Link href={href} className={`block ${className}`}>
-        <div className="flex flex-col w-64 rounded-xl overflow-hidden bg-background
-                        shadow-lg hover:bg-[#15302a] hover:shadow-2xl hover:scale-110 transition-all duration-140 cursor-pointer">
+        <div className="flex flex-col w-64 rounded-xl overflow-hidden bg-[#0c0f0d]
+                        shadow-lg hover:bg-[#15302a] hover:shadow-2xl hover:scale-110 transition-all duration-75 cursor-pointer">
         {/* GIF */}
         <div className="w-full h-40 relative">
             <Image

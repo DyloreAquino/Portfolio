@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavLink from "@/components/NavLink";
+import ParallaxWrapper from "@/components/ParallaxProvider"
+import ParallaxLayer from "@/components/ParallaxLayer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,6 +30,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
+        <ParallaxWrapper>
+          <div>
+            <ParallaxLayer src="/poly-bg.jpg" position="fixed-bg" speed={7} overlay="bg-black/40" />
+          </div>
+        
         <header className="flex fixed p-5 pl-10 justify-between text-2xl font-bold font-mono bg-[#1e453e] top-0 w-full shadow-[0_10px_20px_rgba(0,0,0,0.5)] z-50">
           <NavLink href="/">this is je.</NavLink>
           <div className="flex gap-10 text-lg pr-10 pl-10 font-light">
@@ -38,12 +45,16 @@ export default function RootLayout({
             <NavLink href="/info">info</NavLink>
           </div>
         </header>
-        <main className="m-35">
+
+        <main className="m-35 z-10">
           {children}
         </main>
+        
         <footer className="w-full text-center py-4 font-mono font-light text-sm text-gray-400 mt-auto">
           © 2026 je / dylore / jerold.
         </footer>
+
+        </ParallaxWrapper>
       </body>
     </html>
   );

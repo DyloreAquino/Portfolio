@@ -6,6 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { Html, useProgress } from '@react-three/drei'
 import Model from "@/components/Model";
 import { Environment } from "@react-three/drei";
+import ParallaxLayer from "@/components/ParallaxLayer";
 
 // To load the models faster. from https://medium.com/@arslaniqbalmgt/3d-website-in-next-js-13-with-loader-848bf898caa 
 function Loader() {
@@ -16,8 +17,8 @@ function Loader() {
 export default function Home() {
   return (
     <div className="flex flex-col gap-2 w-full items-center">
+      <ParallaxLayer position="inline" speed={10}>
       <div className="flex flex-row gap-2 w-full items-center">
-
         {/*Right Model Section*/}
           <div style={{height:"300px", width: "400px"}}>
             <Canvas camera={{ position: [0, 0, 3.5], fov: 50 }}>
@@ -30,22 +31,21 @@ export default function Home() {
 
         {/*Right Text Section*/}
         <div className="flex flex-col gap-2 w-full items-center text-center">
-          <Header className="hover:scale-105 hover:text-green-200 transition-all duration-100 cursor-pointer">
-            <a href="/info">
-            je / dylore / jerold.
-            </a>
-          </Header>
+            <Header className="hover:scale-105 hover:text-green-200 transition-all duration-75 cursor-pointer">
+              <a href="/info">
+                je / dylore / jerold.
+              </a>
+            </Header>
+            <p className="font-mono font-light text-gray-400">
+              Software Engineer / Game Developer / Music Producer / Artist / Storyteller.
+            </p>
 
-          <p className="font-mono font-light">
-            Software Engineer / Game Developer / Music Producer / Artist / Storyteller.
-          </p>
-
-          <p className="font-mono font-light">
-            Currently studying BS Computer Science - Digital Game Design and Development in Ateneo de Manila University.
-          </p>
+            <p className="font-mono font-light text-gray-400">
+              Currently studying BS Computer Science - Digital Game Design and Development in Ateneo de Manila University.
+            </p>
         </div>
       </div>
-
+      </ParallaxLayer>
       {/* Cards Section */}
       <div className="flex flex-wrap justify-center gap-8 pt-16 w-full">
         <Card

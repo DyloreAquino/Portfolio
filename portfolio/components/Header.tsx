@@ -1,16 +1,20 @@
 interface HeaderProps {
   children: React.ReactNode;
-  className?: string; // optional for styling
+  subtitle?: string;
+  className?: string;
 }
 
-export default function Header({ children, className}: HeaderProps) {
+export default function Header({ children, subtitle, className }: HeaderProps) {
   return (
-    <div className={`block ${className}`}>
-      <h1
-        className="pt-10 pb-5 font-mono text-3xl font-semibold"
-      >
+    <div className={`text-center mb-4 ${className}`}>
+      <h1 className="text-4xl font-bold font-mono mb-2">
         {children}
       </h1>
+      {subtitle && (
+        <p className="text-gray-400 font-mono text-sm">
+          {subtitle}
+        </p>
+      )}
     </div>
   );
 }
